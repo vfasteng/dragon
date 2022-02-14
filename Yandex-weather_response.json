@@ -1,0 +1,74 @@
+{
+    "now": 1605838651,
+    "now_dt": "2020-11-20T02:17:31.201Z",
+    "info": {
+        "lat": 51.377722,
+        "lon": 42.070997,
+        "url": "https://yandex.ru/pogoda/?lat=51.377722&lon=42.070997"
+    },
+    "fact": {
+        "temp": -9,
+        "feels_like": -14,
+        "icon": "skc_n",
+        "condition": "clear",
+        "wind_speed": 2.8,
+        "wind_gust": 6.5,
+        "wind_dir": "s",
+        "pressure_mm": 763,
+        "pressure_pa": 1018,
+        "humidity": 85,
+        "daytime": "n",
+        "polar": false,
+        "season": "autumn",
+        "obs_time": 1605837675
+    },
+    "forecast": {
+        "date": "2020-11-20",
+        "date_ts": 1605819600,
+        "week": 47,
+        "sunrise": "07:38",
+        "sunset": "16:16",
+        "moon_code": 11,
+        "moon_text": "moon-code-11",
+        "parts": [{
+                "part_name": "morning",
+                "temp_min": -9,
+                "temp_max": -4,
+                "temp_avg": -6,
+                "feels_like": -11,
+                "icon": "skc_d",
+                "condition": "clear",
+                "daytime": "d",
+                "polar": false,
+                "wind_speed": 3.6,
+                "wind_gust": 8,
+                "wind_dir": "s",
+                "pressure_mm": 762,
+                "pressure_pa": 1016,
+                "humidity": 82,
+                "prec_mm": 0,
+                "prec_period": 360,
+                "prec_prob": 0
+            }, {
+                "part_name": "day",
+                "temp_min": -3,
+                "temp_max": 0,
+                "temp_avg": -1,
+                "feels_like": -7,
+                "icon": "skc_d",
+                "condition": "clear",
+                "daytime": "d",
+                "polar": false,
+                "wind_speed": 4,
+                "wind_gust": 9.4,
+                "wind_dir": "s",
+                "pressure_mm": 761,
+                "pressure_pa": 1015,
+                "humidity": 62,
+                "prec_mm": 0,
+                "prec_period": 360,
+                "prec_prob": 0
+            }
+        ]
+    }
+}

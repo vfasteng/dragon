@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+	<script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+	<script src="testRequest.js"></script>
+	<title>ДРАКОН</title>
+</head>
+<body>
+    <div id="dataDiv">
+	_
+    </div>
+ <!--     arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;' -->
+
+
+<a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+	  debug	   
+    >
+      <a-assets>
+        <a-asset-item
+          id="bowser"
+          src="obj/dragon5.gltf"
+        >
+        </a-asset-item>
+		    <img id="sky" src="tex/space.jpg" alt="">
+    <img id="grid" src="tex/gridPattern.png"  alt="">
+    <img id="pink" src="tex/pink.jpg" alt=""> 
+    <img id="chrome" src="tex/chrome.jpg" alt=""> 
+	
+	      <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+	
+	    <a-asset-item id="dawningFont" src="font/dawningOfANewDayRegular.typeface.json"></a-asset-item>
+    <a-asset-item id="exoFont" src="font/exo2Black.typeface.json"></a-asset-item>
+    <a-asset-item id="exoItalicFont" src="font/Fexo2BlackItalic.typeface.json"></a-asset-item>    
+      </a-assets>
+	  
+	  
+ <!--       preset="hiro" -->
+ <!--   type='barcode' value='20' -->
+ 
+      <a-marker
+	  preset="hiro"
+	   
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity
+          id="bowser-model"
+          gltf-model="#bowser"
+          position="0 -1 -0.5"
+          scale="0.025 0.025 0.025"
+		  rotation="150 0 0"
+          class="clickable"
+          gesture-handler
+		  animation-mixer="clip: *;"
+		  sound="src: url(dragon_sound.mp3); autoplay: true"
+        >
+        </a-entity>
+		
+		    <a-entity text-geometry="value: Проба"
+			position="1 3 4" rotation="-90 0 0" scale="0.5 .6 .3"></a-entity>
+    <a-entity id="weatherText" text-geometry="value: ; font: #exoFont"
+	position="-2 -3 -0.5" rotation="-90 0 0" scale="0.4 .6 .3"
+	material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+
+<!--		
+		      <a-entity id= "run" class="clickable"
+			  position="1 3 4" rotation="0 0 0" scale="0.5 .6 .3"
+			  text-geometry="value: RUN; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1; height: 0.5;"
+			  material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity> 
+-->
+      </a-marker>
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
